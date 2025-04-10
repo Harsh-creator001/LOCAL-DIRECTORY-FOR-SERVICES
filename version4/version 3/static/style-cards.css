@@ -1,0 +1,163 @@
+.card-main-cont {
+    margin-top: auto;
+    text-align: center;
+}
+
+#cardContainer, #homeServiceContainer, #cateringServiceContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color:#f5f8ff;
+    gap: 15px;
+    padding: 20px;
+    margin-top: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    
+}
+
+.card {
+    flex: 0 0 calc(25% - 20px);
+    min-width: 280px;
+    max-width: 350px;
+    height: 420px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition:  transform  ease-in-out 0.3s;
+    /* transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+    scroll-snap-align: start;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 32%;
+    object-fit: cover;
+}
+
+
+.card .card-content {
+    /* padding: 10px;
+    display: flex; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.card .card-content .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5876d0;
+    margin-bottom: 5px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.card .card-content .service_type {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.card .card-content .address {
+    font-size: 12px;
+    color: #5e5c5c;
+    margin-bottom: 10px;
+}
+
+.ratings {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.reachout {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.reach {
+    background-color: transparent;
+    border: solid 1px #5876d0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.reach:hover {
+    background-color: #5876d0;
+    color: white;
+    transform: scale(1.1);
+}
+
+.View-Listing button {
+    font-size: 14px;
+    width: 90%;
+    padding: 8px;
+    border: solid 1px #5876d0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-top: 10px;
+}
+
+.View-Listing button:hover {
+    transform: scale(1.05);
+    background-color: #5876d0;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card {
+        flex: 0 0 calc(50% - 20px); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    #cardContainer {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .card {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+}

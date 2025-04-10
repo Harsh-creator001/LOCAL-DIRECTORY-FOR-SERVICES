@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | View More</title>
+    <link rel="stylesheet" href="../static/style-footer.css">
+    <link rel="stylesheet" href="../static/style-nav.css">
+    <link rel="stylesheet" href="../static/style-slider.css">
+    <link rel="stylesheet" href="../static/style-cards.css">
+    <link rel="stylesheet" href="../static/view-more.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,1,0&icon_names=fiber_manual_record" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- nav bar section  -->
+    <nav class="navbar" style="position: relative;">
+        <div class="logo">
+            <img src="../static/logo1.png" alt="">
+        </div>
+        <ul class="nav-left">
+            <a href="#" class="service">
+                <img src="../static/home_24dp_1717A3_FILL1_wght400_GRAD0_opsz24.svg" alt="Home Icon" style="width: 24px; height: 24px;">
+                Home
+            </a>
+             
+            <li class="dropdown">
+                <a href="#" class="service">Services<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul class="dropdown-menu" id="flexing">
+                    <li class="content-menu"><a href="#">Accomodations</a></li>
+                    <li class="content-menu"><a href="#">Tutoring</a></li>
+                    <li class="content-menu"><a href="#">Electrical Services</a></li>
+                    <li class="content-menu"><a href="#">Plumbing Services</a></li>
+                    <li class="content-menu"><a href="#">Catering Services</a></li>
+                    <li class="content-menu"><a href="#">Event Organizers</a></li>
+                    <li class="content-menu"><a href="#">IT services</a></li>
+                    <li class="content-menu"><a href="#">Cleaning Services</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="service">Favourite<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul class="dropdown-menu">
+                    <li class="content-menu"><a href="#">Accomodations</a></li>
+                    <li class="content-menu"><a href="#">Tutoring</a></li>
+                    <li class="content-menu"><a href="#">Electrical Services</a></li>
+                    <li class="content-menu"><a href="#">Plumbing Services</a></li>
+                    <li class="content-menu"><a href="#">Catering Services</a></li>
+                    <li class="content-menu"><a href="#">Event Organizers</a></li>
+                    <li class="content-menu"><a href="#">IT services</a></li>
+                    <li class="content-menu"><a href="#">Cleaning Services</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for services" onkeyup="searchServices()">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="nav-right">
+            <li class="dropdown">
+                <a href="#" class="service">About<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul id="right-element">
+                    <li class="content-menu"><a href="#">About developer</a></li>
+                    <li class="content-menu"><a href="#">contacts</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" id="btns">
+                <a href="#" class="service">Account<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul id="right-element">
+                    <div class="auth-buttons">
+                        <button class="login">
+                            <a href="/login">Login</a>
+                        </button>
+                        <button class="signup">
+                            <a href="/signup">Sign up</a>
+                        </button>
+                    </div>
+                </ul>
+            </li>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- main content section -->
+    <div class="view-more-container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/services">Services</a> / <span class="current-page">Service Details</span>
+        </div>
+    <div id="service-details">
+        <div class="service-card">
+            <div class="service-card-image">
+                <img id="service-image" src="" alt="Service Image">
+            </div>
+            <div class="service-card-details">
+                <h2 id="service-title"></h2>
+                <p><strong>Provider:</strong> <span id="provider-name"></span></p>
+                <p><strong>Service Category:</strong> <span id="service-category"></span></p>
+                <p><strong>Location:</strong> <span id="service-location"></span></p>
+                <p><strong>Experience:</strong> <span id="service-experience"></span></p>
+                <p><strong>Projects Completed:</strong> <span id="projects-completed"></span></p>
+                <p><strong>Contact:</strong> <span id="service-phone"></span></p>
+            </div>
+        </div>
+        <div class="overview-content">
+            <h3>Service Description</h3>
+            <p id="service-description"></p>
+            <h3>Service Features</h3>
+            <ul id="service-features"></ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Info</h3>
+            <p><strong>Phone:</strong> <span id="contact-phone"></span></p>
+            <p><strong>Email:</strong> <span id="contact-email"></span></p>
+            <p><strong>Location:</strong> <span id="contact-location"></span></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="../static/view-more.js"></script>
+</body>
+</html>

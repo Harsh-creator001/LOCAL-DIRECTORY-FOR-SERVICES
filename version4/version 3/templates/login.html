@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="../static/style1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="../static/curierservice.jpg" alt="Slide 1">
+                <img src="../static/market-nairobi-kenya.avif" alt="Slide 2">
+                <img src="../static/nairobi1.jpg" alt="Slide 3">
+            </div>
+            <div class="overlay">
+                <h1>Welcome Back</h1>
+                <p>Sign in to access your account and continue your journey with us</p>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class="login-form">
+                <h1>User Login</h1>
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">LOG IN</button>
+                    <div class="divider">Or continue with</div>
+                    <button type="button" class="social-btn">
+                        <img src="../static/google-color-icon.png" alt="Google">
+                        Sign in with Google
+                    </button>
+                    <button type="button" class="social-btn">
+                        <img src="../static/github-icon.png" alt="Apple">
+                        Sign in with Apple
+                    </button>
+                    <div class="signup-link">
+                        New User? <a href="/signup">Sign up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | View More</title>
+    <link rel="stylesheet" href="../static/style-footer.css">
+    <link rel="stylesheet" href="../static/style-nav.css">
+    <link rel="stylesheet" href="../static/style-slider.css">
+    <link rel="stylesheet" href="../static/style-cards.css">
+    <link rel="stylesheet" href="../static/view-more.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,1,0&icon_names=fiber_manual_record" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- nav bar section  -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../static/logo1.png" alt="">
+        </div>
+        <ul class="nav-left">
+            <a href="/" class="service">
+                <img src="../static/home_24dp_1717A3_FILL1_wght400_GRAD0_opsz24.svg" alt="Home Icon" style="width: 24px; height: 24px;">
+                Home
+            </a>
+            
+            <li class="dropdown">
+                <a href="#" class="service">Services<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul class="dropdown-menu" id="flexing">
+                    <li class="content-menu"><a href="#">Accomodations</a></li>
+                    <li class="content-menu"><a href="#">Tutoring</a></li>
+                    <li class="content-menu"><a href="#">Electrical Services</a></li>
+                    <li class="content-menu"><a href="#">Plumbing Services</a></li>
+                    <li class="content-menu"><a href="#">Catering Services</a></li>
+                    <li class="content-menu"><a href="#">Event Organizers</a></li>
+                    <li class="content-menu"><a href="#">IT services</a></li>
+                    <li class="content-menu"><a href="#">Cleaning Services</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="service">Favourite<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul class="dropdown-menu">
+                    <li class="content-menu"><a href="#">Accomodations</a></li>
+                    <li class="content-menu"><a href="#">Tutoring</a></li>
+                    <li class="content-menu"><a href="#">Electrical Services</a></li>
+                    <li class="content-menu"><a href="#">Plumbing Services</a></li>
+                    <li class="content-menu"><a href="#">Catering Services</a></li>
+                    <li class="content-menu"><a href="#">Event Organizers</a></li>
+                    <li class="content-menu"><a href="#">IT services</a></li>
+                    <li class="content-menu"><a href="#">Cleaning Services</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for services" onkeyup="searchServices()">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="nav-right">
+            <li class="dropdown">
+                <a href="#" class="service">About<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul id="right-element">
+                    <li class="content-menu"><a href="#">About developer</a></li>
+                    <li class="content-menu"><a href="#">contacts</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" id="btns">
+                <a href="#" class="service">Account<span class="arrow material-symbols-outlined">keyboard_arrow_down</span></a>
+                <ul id="right-element">
+                    <div class="auth-buttons">
+                        <button class="login">
+                            <a href="/login">Login</a>
+                        </button>
+                        <button class="signup">
+                            <a href="/signup">Sign up</a>
+                        </button>
+                    </div>
+                </ul>
+            </li>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- main content section -->
+    <div class="view-more-container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/services">Services</a> / <span class="current-page">Service Details</span>
+        </div>
+
+        <!-- Service Details Section -->
+        <div class="service-details">
+            <div class="service-header">
+                <h1>Service Details</h1>
+                <div class="back-button">
+                    <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Back to Services</a>
+                </div>
+            </div>
+
+            <!-- Main Service Card (Expanded) -->
+            <div class="expanded-card-container" id="expandedCard">
+                <!-- Content will be loaded dynamically -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading service details...</p>
+                </div>
+            </div>
+
+            <!-- Service Description -->
+            <div class="service-description">
+                <h2>About This Service</h2>
+                <div class="description-tabs">
+                    <div class="tab-header">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="reviews">Reviews</button>
+                        <button class="tab-btn" data-tab="portfolio">Portfolio</button>
+                        <button class="tab-btn" data-tab="contact">Contact</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="overview">
+                        <div class="overview-content">
+                            <div class="overview-section">
+                                <h3>Service Description</h3>
+                                <p>Loading service description...</p>
+                                
+                                <h3>Service Features</h3>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Fast and reliable service</li>
+                                    <li><i class="fas fa-check-circle"></i> Competitive pricing</li>
+                                    <li><i class="fas fa-check-circle"></i> Experienced professionals</li>
+                                    <li><i class="fas fa-check-circle"></i> Quality materials and equipment</li>
+                                    <li><i class="fas fa-check-circle"></i> Satisfaction guaranteed</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-details-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <h4>Location</h4>
+                                        <p>Loading...</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <h4>Working Hours</h4>
+                                        <p>Loading...</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <i class="fas fa-tag"></i>
+                                    <div>
+                                        <h4>Pricing</h4>
+                                        <p>Loading...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="reviews">
+                        <div class="reviews-container">
+                            <div class="review-summary">
+                                <div class="average-rating">
+                                    <span class="rating-number">-.-</span>
+                                    <div class="stars">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="total-reviews">Based on 0 reviews</span>
+                                </div>
+                                
+                                <div class="rating-breakdown">
+                                    <div class="rating-bar">
+                                        <span>5 Stars</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                        <span>0%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>4 Stars</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                        <span>0%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>3 Stars</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                        <span>0%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>2 Stars</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                        <span>0%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>1 Star</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 0%"></div>
+                                        </div>
+                                        <span>0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="review-list">
+                                <!-- Reviews will be loaded dynamically -->
+                                <div class="loading-reviews">
+                                    <p>Loading reviews...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="portfolio">
+                        <div class="portfolio-gallery">
+                            <!-- Portfolio will be loaded dynamically if available -->
+                            <p class="portfolio-message">Portfolio images will appear here if available.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="contact">
+                        <div class="contact-container">
+                            <div class="contact-info">
+                                <h3>Contact Information</h3>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <p id="contact-phone">Loading...</p>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <p id="contact-email">Loading...</p>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p id="contact-location">Loading...</p>
+                                </div>
+                                <div class="contact-social">
+                                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-form">
+                                <h3>Send a Message</h3>
+                                <form id="contact-form">
+                                    <div class="form-group">
+                                        <label for="name">Your Name</label>
+                                        <input type="text" id="name" placeholder="Enter your name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Your Email</label>
+                                        <input type="email" id="email" placeholder="Enter your email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" rows="5" placeholder="Enter your message" required></textarea>
+                                    </div>
+                                    <button type="submit" class="submit-btn">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Similar Services Section -->
+        <div class="similar-services">
+            <h2>Similar Services You May Like</h2>
+            <div class="container_cards" id="otherServices">
+                <!-- Similar services will be loaded dynamically -->
+                <div class="loading-similar">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading similar services...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section  -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#" id="common">About Us</a></li>
+                        <li><a href="#" id="common">Our Services</a></li>
+                        <li><a href="#" id="common">Privacy Policy</a></li>
+                        <li><a href="#" id="common">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="#" id="common">FAQ</a></li>
+                        <li><a href="#" id="common">Booking Status</a></li>
+                        <li><a href="#" id="common">Payments Options</a></li>
+                        <li><a href="#" id="common">Booking Cancelation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SERVICE</h4>
+                    <ul>
+                        <li><a href="#" id="common">Home and Maitenance Services</a></li>
+                        <li><a href="#" id="common">Business and Professional Services</a></li>
+                        <li><a href="#" id="common">Health and Welness Services</a></li>
+                        <li><a href="#" id="common">Automotive Services</a></li>
+                        <li><a href="#" id="common">Food and Hospitality Services</a></li>
+                        <li><a href="#" id="common">Events and Occasions Services</a></li>
+                        <li><a href="#" id="common">Education and Training Services</a></li>
+                        <li><a href="#" id="common">Public Services and Utilities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SOCIALS</h4>
+                    <div class="social-links">
+                        <a href="#" id="common"><i class="fab fa-facebook"></i></a>
+                        <a href="#" id="common"><i class="fab fa-twitter"></i></a> 
+                        <a href="#" id="common"><i class="fab fa-instagram"></i></a> 
+                        <a href="#" id="common"><i class="fab fa-whatsapp"></i></a>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="../static/view-more.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.querySelector(".hamburger");
+            const leftLinks = document.querySelector(".nav-left");
+            const rightLinks = document.querySelector(".nav-right");
+            const authButtons = document.querySelector(".auth-buttons");
+            
+            hamburger.addEventListener("click", function() {
+                leftLinks.classList.toggle("active");
+                rightLinks.classList.toggle("active");
+                authButtons.classList.toggle("active");
+            });
+
+            // Tab functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected tab content
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Handle contact form submission
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // In a real implementation, you would send this data to your server
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+                    
+                    alert(`Thank you for your message, ${name}! We will get back to you soon.`);
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+[
+    {
+        "id": "1",
+        "name": "Mwimali Eystima LTD",
+        "serviceType": "Electrical Maintenance & Installation",
+        "location": "Nairobi, Kenya",
+        "profileImage": "pexels-dennisshotit-28074289.jpg",
+        "serviceImage": "pexels-kindelmedia-8487400.jpg",
+        "ratings": 5,
+        "gallery": [
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "PowerFix Solutions",
+        "serviceType": "Home & Industrial Electrical Repair",
+        "location": "Mombasa, Kenya",
+        "profileImage": "pexels-dennisshotit-28074289.jpg",
+        "serviceImage": "pexels-kindelmedia-8487400.jpg",
+        "ratings": 4,
+        "gallery": [
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "PowerFix Solutions",
+        "serviceType": "Home & Industrial Electrical Repair",
+        "location": "Mombasa, Kenya",
+        "profileImage": "pexels-dennisshotit-28074289.jpg",
+        "serviceImage": "pexels-kindelmedia-8487400.jpg",
+        "ratings": 3,
+        "gallery": [
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg"
+        ]
+    },
+    {   "id": "4",
+        "name": "PowerFix Solutions",
+        "serviceType": "Home & Industrial Electrical Repair",
+        "location": "Mombasa, Kenya",
+        "profileImage": "pexels-dennisshotit-28074289.jpg",
+        "serviceImage": "pexels-kindelmedia-8487400.jpg",
+        "ratings": 3
+        ,
+        "gallery": [
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg",
+            "pexels-dennisshotit-28074289.jpg"
+        ]
+    }
+]
+
